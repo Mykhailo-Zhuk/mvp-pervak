@@ -3,16 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Activity,
-  ShoppingBag,
-  UtensilsCrossed,
-  FolderTree,
-  CalendarCheck2,
-  QrCode,
-  Settings,
-  X,
-} from "lucide-react";
+import { Activity, CalendarDays, FolderOpen, Package, QrCode, Settings, Utensils, X } from 'lucide-react';
 import { cn } from "@/lib/utils";
 
 type NavItem = {
@@ -33,25 +24,25 @@ const NAV_ITEMS: NavItem[] = [
   {
     href: "/admin/orders",
     label: "Orders",
-    icon: ShoppingBag,
+    icon: Package,
     match: (p) => p.startsWith("/admin/orders"),
   },
   {
     href: "/admin/menu",
     label: "Menu",
-    icon: UtensilsCrossed,
+    icon: Utensils,
     match: (p) => p.startsWith("/admin/menu"),
   },
   {
     href: "/admin/categories",
     label: "Categories",
-    icon: FolderTree,
+    icon: FolderOpen,
     match: (p) => p.startsWith("/admin/categories"),
   },
   {
     href: "/admin/bookings",
     label: "Bookings",
-    icon: CalendarCheck2,
+    icon: CalendarDays,
     match: (p) => p.startsWith("/admin/bookings"),
   },
   {
