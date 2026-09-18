@@ -46,16 +46,16 @@ export default function Home() {
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Button asChild size="lg">
-              <a href="tel:+38(044)2350952">
-                <Phone className="h-4 w-4" />
-                +38 (044) 235-09-52
+              <a href="tel:+38(044)2350952" className="inline-flex items-center gap-2">
+                <Phone className="h-5 w-5 flex-shrink-0" />
+                <span>+38 (044) 235-09-52</span>
               </a>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/menu/pervak">
-                <UtensilsCrossed className="h-4 w-4" />
-                Переглянути меню
-                <ArrowRight className="h-4 w-4" />
+              <Link href="/menu/pervak" className="inline-flex items-center gap-2">
+                <UtensilsCrossed className="h-5 w-5 flex-shrink-0" />
+                <span>Переглянути меню</span>
+                <ArrowRight className="h-5 w-5 flex-shrink-0" />
               </Link>
             </Button>
           </div>
