@@ -5,10 +5,10 @@ import { generateSlotsForService } from "@/lib/data-helpers";
 
 export async function GET(
   _request: Request,
-  { params }: { params: { serviceId: string; slotId: string } }
+  { params }: { params: Promise<{ serviceId: string; slotId: string }> }
 ) {
   // Validate path params with Zod → 400 on invalid shape.
-  const parsed = ServiceSlotParamsSchema.safeParse(params);
+  const parsed = ServiceSlotParamsSchema.safeParse(await params);
   if (!parsed.success) {
     return NextResponse.json(
       {

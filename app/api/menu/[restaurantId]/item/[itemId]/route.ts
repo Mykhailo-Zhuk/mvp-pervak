@@ -4,10 +4,10 @@ import { MenuItemParamsSchema, MenuItemSchema } from "@/lib/schemas";
 
 export async function GET(
   _request: Request,
-  { params }: { params: { restaurantId: string; itemId: string } }
+  { params }: { params: Promise<{ restaurantId: string; itemId: string }> }
 ) {
   // Validate path params with Zod → 400 on invalid shape.
-  const parsed = MenuItemParamsSchema.safeParse(params);
+  const parsed = MenuItemParamsSchema.safeParse(await params);
   if (!parsed.success) {
     return NextResponse.json(
       {
